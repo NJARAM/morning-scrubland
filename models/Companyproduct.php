@@ -50,10 +50,10 @@ class Companyproduct extends \yii\db\ActiveRecord
     {
         return [
             [['lpo_number', 'lpo_date', 'item_description', 'unit_of_issue', 'quantity', 'unit_price', 'total_cost', 'PL4A_No', 'Item_category', 'Vehicle_No', 'Requisioner', 'Directors', 'Department', 'Authorised_By', 'Procurement_Method', 'Supplier', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Invoice_Date', 'Invoice_Amount', 'Delivery_Note_No', 'Status', 'Quote'], 'safe'],
-            [['lpo_number', 'quantity', 'PL4A_No', 'Vehicle_No', 'Department', 'Authorised_By', 'Procurement_Method', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Delivery_Note_No'], 'integer'],
+            [['lpo_number', 'quantity', 'PL4A_No', 'Department', 'Procurement_Method', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Delivery_Note_No'], 'integer'],
             [['lpo_date', 'Invoice_Date'], 'safe'],
             [['unit_price', 'total_cost', 'Invoice_Amount'], 'number'],
-            [['item_description', 'Requisioner', 'Directors', 'Quote'], 'string', 'max' => 255],
+            [['item_description', 'Requisioner', 'Directors', 'Quote', 'Authorised_By', 'Vehicle_No'], 'string', 'max' => 255],
             [['unit_of_issue', 'Item_category', 'Supplier', 'Status'], 'string', 'max' => 50],
         ];
     }
