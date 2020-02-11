@@ -1,16 +1,7 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
-//$db = require __DIR__ . '/db.php';
-$host = $username = $password = $dbname = '';
-
-$url = parse_url(getenv("postgres://anjtgzkxawulsa:2b6f53581e30573877a29060c3183c5508913de404702a8d65cce6b41f27a56f@ec2-54-197-34-207.compute-1.amazonaws.com:5432/dc9npaun95urc1"));
-if (isset($url["host"]) && isset($url["user"]) && isset($url["pass"]) && isset($url["path"])) {
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $dbname = substr($url["path"], 1);
-}
+$db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
@@ -69,13 +60,7 @@ $config = [
                 // ...
             ],
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=' . $host . ';dbname=' . $dbname,
-            'username' => $username,
-            'password' => $password,
-            'charset' => 'utf8',
-        ],
+        'db' => $db,
 
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
