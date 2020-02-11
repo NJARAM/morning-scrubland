@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\date\DatePicker;
+use yii\jui\DatePicker;
+
 
 
 /* @var $this yii\web\View */
@@ -23,15 +24,12 @@ use kartik\date\DatePicker;
         </div>
 
         <div class="col-md-6" >
-          <?php echo '<label class="control-label">Lpo Date</label>';
+            <?php echo '<label class="control-label">LPO Date</label>';
             echo DatePicker::widget([
-            'name' => 'lpo_date',
-            'type' => DatePicker::TYPE_COMPONENT_APPEND,
-//            'value' => '23-Feb-1982',
-            'pluginOptions' => [
-            'autoclose'=>true,
-             'format' => 'yyyy-M-dd'
-            ]
+                'model' => $model,
+                'attribute' => 'lpo_date',
+                //'language' => 'ru',
+                'dateFormat' => 'yyyy-MM-dd',
             ]);?>
         </div>
 
@@ -148,15 +146,12 @@ use kartik\date\DatePicker;
 
         <div class="col-md-6" >
             <?php echo '<label class="control-label">Invoice Date</label>';
-            echo DatePicker::widget([
-                'name' => 'Invoice_Date',
-//                'type' => DatePicker::TYPE_COMPONENT_APPEND,
-//                'value' => '23-Feb-1982',
-                'pluginOptions' => [
-                    'autoclose'=>true,
-                    'format' => 'yyyy-M-dd'
-                ]
-            ]);?>
+echo DatePicker::widget([
+    'model' => $model,
+    'attribute' => 'Invoice_Date',
+    //'language' => 'ru',
+    'dateFormat' => 'yyyy-MM-dd',
+]);?>
         </div>
 
     </div>
