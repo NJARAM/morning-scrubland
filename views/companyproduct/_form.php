@@ -150,7 +150,7 @@ use kartik\date\DatePicker;
             <?php echo '<label class="control-label">Invoice Date</label>';
             echo DatePicker::widget([
                 'name' => 'Invoice_Date',
-                'type' => DatePicker::TYPE_COMPONENT_APPEND,
+//                'type' => DatePicker::TYPE_COMPONENT_APPEND,
 //                'value' => '23-Feb-1982',
                 'pluginOptions' => [
                     'autoclose'=>true,
