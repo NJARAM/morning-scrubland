@@ -118,7 +118,10 @@ use kartik\date\DatePicker;
         </div>
 
         <div class="col-md-6" >
-            <?= $form->field($model, 'Supplier')->textInput(['maxlength' => true]) ?>
+            <?='';// $form->field($model, 'Supplier')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'Supplier')
+                ->dropdownList(['1' => 'Admiral trading co. ltd', '2' => 'Toyota Kenya Limited','3' => 'Merida Spares', '4' => ' Dapny Limited','5' => 'National Oil Corporation,', '6' => ' Duke energy products & Company','7' => ' Starbell Agencies', '8' => 'Tanar Suppliers','9' => 'Upper Land petrol station', '10' => 'Aquara Aqencies','11' => 'Sagoo Holdings', '12' => 'City engineering hydraulic','13' => ' Cherik enterprises', '14' => 'Wire products ltd','15' => 'Kenol Kobil', '16' => 'Kansai plascom','17' => 'Samco auto parts', '18' => 'Autostyle Performance Limited', '19' => 'Nairobi Crankshaft center', '20' => 'Ministry of transport','21' => 'Jaidah motors ltd', '22' => 'E. A drillicon ltd','23' => 'Chloride Oxide', '24' => 'Badgas autospares','25' => 'Andy Ventures','26' => 'Anitaan agencies','27' => 'Roots general suppliers','28' => ' Elwalk printers','29' => 'Other'], ['prompt' => '---Select Data---']) ?>
+
         </div>
 
     </div>
