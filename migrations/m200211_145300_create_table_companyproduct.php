@@ -21,7 +21,7 @@ class m200211_145300_create_table_companyproduct extends Migration
 
         // Create user table
         $this->createTable('{{%companyproduct}}', [
-            'ID' => Schema::TYPE_PK.' NOT NULL AUTO_INCREMENT',
+            'ID' => $this->primaryKey(),
             'lpo_number' => Schema::TYPE_INTEGER,
             'lpo_date' => $this->datetime(),
             'item_description' => Schema::TYPE_STRING,
