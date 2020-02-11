@@ -5,14 +5,14 @@ namespace app\controllers;
 use Yii;
 use app\models\Companyproduct;
 use app\models\CompanyproductSearch;
-use yii\web\Controller;
+//use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * CompanyproductController implements the CRUD actions for Companyproduct model.
  */
-class CompanyproductController extends Controller
+class CompanyproductController extends SiteController
 {
     /**
      * {@inheritdoc}
