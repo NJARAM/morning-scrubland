@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 // use fedemotta\datatables\DataTables;
 
@@ -51,16 +52,24 @@ $this->params['breadcrumbs'][] = $this->title;
     ];
      
     ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
+   <?php echo ExportMenu::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => $gridColumns,
+    'dropdownOptions' => [
+        'label' => 'Export All',
+        'class' => 'btn btn-secondary'
+    ]
+]) . "<hr>\n".
+GridView::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => $gridColumns,
+]);?>
+    <?='';// GridView::widget([
+       // 'dataProvider' => $dataProvider,
         // 'filterModel' => $searchModel,
-        'columns' => $gridColumns,
-        'toolbar'=>[
-            '{export}',
-            '{toggleData}'
-        ]
+       // 'columns' => $gridColumns,
+       
 
-    ]); ?>
+   // ]); ?>
 
 </div>
