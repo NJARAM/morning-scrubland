@@ -49,29 +49,9 @@ class CompanyproductController extends SiteController
     {
         $searchModel = new CompanyproductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $modelArray=array();
-        $model = Companyproduct::find()->all();
-        foreach($model as $item){
-            $modelArray[] = array(
-                $item->lpo_number,
-                @$item->lpo_date,
-                @$item->item_description,
-                $item->unit_of_issue,
-                $item->quantity,
-                $item->unit_price,
-                $item->total_cost,
-                $item->PL4A_No,
-                '<a href="/companyproduct/update?id='.$item->ID.'"><i class="fa fa-edit"></i></a><a href="/companyproduct/view?id='.$item->ID.'" ><i class="fa fa-eye"></i></a> <a href="/companyproduct/delete?id='.$item->ID.'"><i class="fa fa-trash"></i></a>',
-
-                //  $station->WarmaLevy,
-
-            );
-        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'modelArray' =>$modelArray
         ]);
 
 //
