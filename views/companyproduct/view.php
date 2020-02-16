@@ -42,12 +42,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'Vehicle_No',
             'Requisioner',
             'Directors',
-            'Department',
+            [
+                'attribute'=>'Deparment',
+                'value'=>$model->departmentName,
+            ],
             'Authorised_By',
-            'Procurement_Method',
-            'Supplier',
+            [
+                'attribute'=>'Procurement_Method',
+                'value'=>$model->pmethod,
+            ],
+            [
+                'attribute'=>'Supplier',
+                'value'=>$model->supplierName,
+            ],
             'Invoice_no',
-            'Scheme_Applied',
+            [
+                'attribute'=>'Scheme_Applied',
+                'value'=>$model->scheme,
+            ],
             'AGPO_No',
             'Invoice_Date',
             'Invoice_Amount',

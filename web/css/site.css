@@ -1,6 +1,8 @@
 html,
 body {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .wrap {
@@ -12,7 +14,11 @@ body {
 
 .wrap > .container {
     padding: 70px 15px 20px;
+   
+        overflow-anchor: none;
+    
 }
+
 
 .footer {
     height: 60px;
@@ -94,6 +100,7 @@ a.desc:after {
 .nav li > form > button.logout {
     padding: 15px;
     border: none;
+    color:white;
 }
 
 @media(max-width:767px) {
@@ -113,6 +120,14 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
-.my-navbar {
-    background-color: #1E90FF;
+.nav > li > a {
+    color: white;
 }
+.my-navbar {
+    background-color: #1E90FF; 
+}
+.navbar-brand{
+    color: white; 
+}
+
+ 

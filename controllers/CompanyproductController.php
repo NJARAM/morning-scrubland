@@ -49,6 +49,7 @@ class CompanyproductController extends SiteController
     {
         $searchModel = new CompanyproductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+       
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

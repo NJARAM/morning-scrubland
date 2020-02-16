@@ -10,8 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
-AppAsset::register($this);
-?>
+AppAsset::register($this);?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -33,10 +32,12 @@ AppAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'my-navbar navbar-fixed-top',
+       
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-right',],
+        
         'items' => [
 //            ['label' => 'Home', 'url' => ['/site/index']],
 //            ['label' => 'About', 'url' => ['/site/about']],
@@ -57,6 +58,7 @@ AppAsset::register($this);
                 . '</li>'
             )
         ],
+ 
     ]);
     NavBar::end();
     ?>
