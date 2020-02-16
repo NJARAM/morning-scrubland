@@ -100,7 +100,7 @@ a.desc:after {
 .nav li > form > button.logout {
     padding: 15px;
     border: none;
-    color:white;
+    color:#fff;
 }
 
 @media(max-width:767px) {
@@ -121,13 +121,13 @@ a.desc:after {
     outline: none;
 }
 .nav > li > a {
-    color: white;
+    color: #fff;
 }
 .my-navbar {
     background-color: #1E90FF; 
 }
 .navbar-brand{
-    color: white; 
+    color: #fff; 
 }
 
  
