@@ -2,7 +2,7 @@
 
 return [
     'adminEmail' => 'mosesmmuchoki@gmail.com',
-    'senderEmail' => 'noreply@example.com',
-    'senderName' => 'Example.com mailer',
+    'senderEmail' => 'mosesmmuchoki@gmail.com',
+    'senderName' => 'Moses Njara',
     'user.passwordResetTokenExpire' => 3600,
 ];
