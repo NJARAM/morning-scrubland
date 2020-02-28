@@ -8,30 +8,32 @@ use Yii;
  * This is the model class for table "companyproduct".
  *
  * @property int $ID
- * @property int $lpo_number
- * @property string $lpo_date
- * @property string $item_description
- * @property string $unit_of_issue
- * @property int $quantity
- * @property float $unit_price
- * @property float $total_cost
- * @property int $PL4A_No
- * @property string $Item_category
- * @property int $Vehicle_No
- * @property string $Requisioner
- * @property string $Directors
- * @property int $Department
- * @property int $Authorised_By
- * @property int $Procurement_Method
- * @property string $Supplier
- * @property int $Invoice_no
- * @property int $Scheme_Applied
- * @property int $AGPO_No
- * @property string $Invoice_Date
- * @property float $Invoice_Amount
- * @property int $Delivery_Note_No
- * @property string $Status
- * @property string $Quote
+ * @property int|null $lpo_number
+ * @property string|null $lpo_date
+ * @property string|null $item_description
+ * @property string|null $unit_of_issue
+ * @property int|null $quantity
+ * @property float|null $unit_price
+ * @property float|null $total_cost
+ * @property int|null $PL4A_No
+ * @property string|null $Item_category
+ * @property string|null $Vehicle_No
+ * @property string|null $Requisioner
+ * @property string|null $Directors
+ * @property int|null $Department
+ * @property string|null $Authorised_By
+ * @property string|null $Procurement_Method
+ * @property string|null $Supplier
+ * @property int|null $Invoice_no
+ * @property int|null $Scheme_Applied
+ * @property string|null $AGPO_No
+ * @property string|null $Invoice_Date
+ * @property float|null $Invoice_Amount
+ * @property int|null $Delivery_Note_No
+ * @property string|null $Status
+ * @property string|null $Quote
+ * @property string|null $OtherSuppliers
+ * @property string|null $OtherDeparments
  */
 class Companyproduct extends \yii\db\ActiveRecord
 {
@@ -49,12 +51,10 @@ class Companyproduct extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['lpo_number', 'lpo_date', 'item_description', 'unit_of_issue', 'quantity', 'unit_price', 'total_cost', 'PL4A_No', 'Item_category', 'Vehicle_No', 'Requisioner', 'Directors', 'Department', 'Authorised_By', 'Procurement_Method', 'Supplier', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Invoice_Date', 'Invoice_Amount', 'Delivery_Note_No', 'Status', 'Quote'], 'safe'],
-            [['lpo_number', 'quantity', 'PL4A_No', 'Department', 'Procurement_Method', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Delivery_Note_No'], 'integer'],
+            [['lpo_number', 'quantity', 'PL4A_No', 'Department', 'Invoice_no', 'Scheme_Applied', 'Delivery_Note_No'], 'integer'],
             [['lpo_date', 'Invoice_Date'], 'safe'],
             [['unit_price', 'total_cost', 'Invoice_Amount'], 'number'],
-            [['item_description', 'Requisioner', 'Directors', 'Quote', 'Authorised_By', 'Vehicle_No'], 'string', 'max' => 255],
-            [['unit_of_issue', 'Item_category', 'Supplier', 'Status'], 'string', 'max' => 50],
+            [['item_description', 'unit_of_issue', 'Item_category', 'Vehicle_No', 'Requisioner', 'Directors', 'Authorised_By', 'Procurement_Method', 'Supplier', 'AGPO_No', 'Status', 'Quote', 'OtherSuppliers', 'OtherDeparments'], 'string', 'max' => 255],
         ];
     }
 
@@ -89,6 +89,8 @@ class Companyproduct extends \yii\db\ActiveRecord
             'Delivery_Note_No' => 'Delivery Note No',
             'Status' => 'Status',
             'Quote' => 'Quote',
+            'OtherSuppliers' => 'Add Supplier',
+            'OtherDeparments' => 'Add Deparment',
         ];
     }
 
@@ -257,6 +259,13 @@ class Companyproduct extends \yii\db\ActiveRecord
             default:
             return '-Not Set-';
             }
+        }
+
+        public function beforeSave($insert)
+        {
+        
+         $this->total_cost=$this->unit_price*$this->quantity;
+         return parent::beforeSave($insert);
         }
 
    

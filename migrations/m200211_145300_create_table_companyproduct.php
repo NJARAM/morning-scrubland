@@ -40,12 +40,14 @@ class m200211_145300_create_table_companyproduct extends Migration
             'Supplier'=>$this->string(),
             'Invoice_no'=>Schema::TYPE_INTEGER,
             'Scheme_Applied'=>Schema::TYPE_INTEGER,
-            'AGPO_No'=>Schema::TYPE_INTEGER,
+            'AGPO_No'=>Schema::TYPE_STRING,
             'Invoice_Date'=>$this->datetime(),
             'Invoice_Amount'=>$this->float(),
             'Delivery_Note_No'=>Schema::TYPE_INTEGER,
             'Status'=>Schema::TYPE_STRING,
             'Quote'=>Schema::TYPE_STRING,
+            'OtherSuppliers'=>Schema::TYPE_STRING,
+            'OtherDeparments'=>Schema::TYPE_STRING,
 
         ], $tableOptions);
     }

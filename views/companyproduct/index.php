@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
+use yii\widgets\Pjax;
 // use fedemotta\datatables\DataTables;
 
 /* @var $this yii\web\View */
@@ -18,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Add Item', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php echo $this->render('_search', ['model' => $searchModel]);?>
     </p>
 
     <?php 
@@ -72,6 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'class' => 'btn btn-secondary'
     ]
 ]) . "<hr>\n".
+
 GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => $gridColumns,

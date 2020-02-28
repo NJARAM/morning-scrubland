@@ -14,11 +14,12 @@ class CompanyproductSearch extends Companyproduct
     /**
      * {@inheritdoc}
      */
+    public $globalsearch;
     public function rules()
     {
         return [
             [['ID', 'lpo_number', 'quantity', 'PL4A_No', 'Vehicle_No', 'Department', 'Authorised_By', 'Procurement_Method', 'Invoice_no', 'Scheme_Applied', 'AGPO_No', 'Delivery_Note_No'], 'integer'],
-            [['lpo_date', 'item_description', 'unit_of_issue', 'Item_category', 'Requisioner', 'Directors', 'Supplier', 'Invoice_Date', 'Status', 'Quote'], 'safe'],
+            [['lpo_date', 'item_description', 'unit_of_issue', 'Item_category','globalsearch', 'Requisioner', 'Directors', 'Supplier', 'Invoice_Date', 'Status', 'Quote'], 'safe'],
             [['unit_price', 'total_cost', 'Invoice_Amount'], 'number'],
         ];
     }
@@ -78,14 +79,23 @@ class CompanyproductSearch extends Companyproduct
             'Delivery_Note_No' => $this->Delivery_Note_No,
         ]);
 
-        $query->andFilterWhere(['like', 'item_description', $this->item_description])
-            ->andFilterWhere(['like', 'unit_of_issue', $this->unit_of_issue])
-            ->andFilterWhere(['like', 'Item_category', $this->Item_category])
-            ->andFilterWhere(['like', 'Requisioner', $this->Requisioner])
-            ->andFilterWhere(['like', 'Directors', $this->Directors])
-            ->andFilterWhere(['like', 'Supplier', $this->Supplier])
-            ->andFilterWhere(['like', 'Status', $this->Status])
-            ->andFilterWhere(['like', 'Quote', $this->Quote]);
+//        $query->andFilterWhere(['like', 'item_description', $this->item_description])
+//            ->andFilterWhere(['like', 'unit_of_issue', $this->unit_of_issue])
+//            ->andFilterWhere(['like', 'Item_category', $this->Item_category])
+//            ->andFilterWhere(['like', 'Requisioner', $this->Requisioner])
+//            ->andFilterWhere(['like', 'Directors', $this->Directors])
+//            ->andFilterWhere(['like', 'Supplier', $this->Supplier])
+//            ->andFilterWhere(['like', 'Status', $this->Status])
+//            ->andFilterWhere(['like', 'Quote', $this->Quote]);
+
+        $query->orFilterWhere(['like', 'item_description', $this->globalsearch])
+            ->orFilterWhere(['like', 'unit_of_issue', $this->globalsearch])
+            ->orFilterWhere(['like', 'Item_category', $this->globalsearch])
+            ->orFilterWhere(['like', 'Requisioner', $this->globalsearch])
+            ->orFilterWhere(['like', 'Directors', $this->globalsearch])
+            ->orFilterWhere(['like', 'Supplier', $this->globalsearch])
+            ->orFilterWhere(['like', 'Status', $this->globalsearch])
+            ->orFilterWhere(['like', 'Quote', $this->globalsearch]);
 
         return $dataProvider;
     }

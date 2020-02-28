@@ -15,15 +15,16 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'ID') ?>
+    <?='';// $form->field($model, 'ID') ?>
 
-    <?= $form->field($model, 'lpo_number') ?>
+    <?='';// $form->field($model, 'lpo_number') ?>
 
-    <?= $form->field($model, 'lpo_date') ?>
+    <?= '';//$form->field($model, 'lpo_date') ?>
 
-    <?= $form->field($model, 'item_description') ?>
+    <?='';// $form->field($model, 'item_description') ?>
 
-    <?= $form->field($model, 'unit_of_issue') ?>
+    <?=' ';//$form->field($model, 'unit_of_issue') ?>
+    <?= $form->field($model, 'globalsearch')->textInput() ?>
 
     <?php // echo $form->field($model, 'quantity') ?>
 
