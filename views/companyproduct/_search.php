@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
 </div>
 <div class="col-md-2 ">   
-<?= $form->field($model, 'globalsearch')->textInput() ?>
+<?= $form->field($model, 'globalsearch')->textInput()->label('Search Box') ?>
 </div>
 </div>
 
