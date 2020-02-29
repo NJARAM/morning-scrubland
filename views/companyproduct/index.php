@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Add Item', ['create'], ['class' => 'btn btn-success']) ?>
-        <?php echo $this->render('_search', ['model' => $searchModel]);?>
+        <?php //echo $this->render('_search', ['model' => $searchModel]);?>
     </p>
 
     <?php 
@@ -66,19 +66,23 @@ $this->params['breadcrumbs'][] = $this->title;
     ];
      
     ?>
+  
    <?php echo ExportMenu::widget([
     'dataProvider' => $dataProvider,
     'columns' => $gridColumns,
     'dropdownOptions' => [
         'label' => 'Export All',
-        'class' => 'btn btn-secondary'
+        'class' => 'btn btn-secondary pull-left'
     ]
 ]) . "<hr>\n".
 
 GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => $gridColumns,
+    'pjax'=>true,
 ]);?>
+
+
     <?='';// GridView::widget([
        // 'dataProvider' => $dataProvider,
         // 'filterModel' => $searchModel,

@@ -49,20 +49,21 @@ class CompanyproductController extends SiteController
     {
         $searchModel = new CompanyproductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-       
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
 
-//
-//
-//
-//
-//        return $this->render('index', [
-//            'searchModel' => $searchModel,
-//            'dataProvider' => $dataProvider,
-//        ]);
+        if (Yii::$app->request->isPjax) {
+
+            return $this->renderPartial('index', [
+
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+
+            ]);
+        }else{
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
     }
 
     /**

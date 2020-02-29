@@ -124,52 +124,56 @@ class Companyproduct extends \yii\db\ActiveRecord
             break;
             case 2:return 'AD';
             break;
-            case 3:return 'PAC';
+            case 3:return 'Rhino';
             break;
-            case 4:return 'Buildings';
+            case 4:return 'PAC';
+           break;
+            case 5:return 'Buildings';
             break;
     
-            case 5:return 'Fence';
+            case 6:return 'Fence';
             break;
-            case 6:return 'Procurement';
+            case 7:return 'Procurement';
             break;
-            case 7:return 'Accounts';
+            case 8:return 'Accounts';
             break;
-            case 8:return 'Human Capital';
+            case 9:return 'Human Capital';
             break;
-            case 9:return 'Roads';
+            case 10:return 'Roads';
             break;
-        case 10:return 'Customer Care';
+        case 11:return 'Customer Care';
         break;
-        case 11:return 'Administration';
+        case 12:return 'Administration';
         break;
-        case 12:return 'ICT';
+        case 13:return 'ICT';
         break;
-        case 13:return 'Telcom';
+        case 14:return 'Telcom';
         break;
-        case 14:return 'RPU';
+        case 15:return 'RPU';
         break;
-        case 15:return 'Intelligence';
+        case 16:return 'Intelligence';
          break;
-         case 16:return 'Education';
+         case 17:return 'Education';
          break;
-          case 17:return 'Research';
+          case 18:return 'Research';
          break;
-         case 18:return 'Ngong';
+         case 19:return 'Ngong';
          break;
-         case 19:return 'Machakos';
+         case 20:return 'Machakos';
          break;
-         case 20:return 'Makueni';
+         case 21:return 'Makueni';
         break;
-        case 21:return 'Ngurumani';
+        case 22:return 'Ngurumani';
         break;
-        case 22:return 'WorkShop';
+        case 23:return 'WorkShop';
         break;
-        case 23:return 'EastGate';
+        case 24:return 'EastGate';
+        break;
+        case 25:return $this->OtherDeparments;
         break;
       
          default:
-        return 'Other';
+        return 'Not set';
             }
         }
 
@@ -234,7 +238,7 @@ class Companyproduct extends \yii\db\ActiveRecord
     break;
     case 28:return 'Elwalk printers';
     break;
-    case 29:return 'Other';
+    case 29:return $this->OtherSuppliers;
     break;
       
          default:

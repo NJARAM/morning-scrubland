@@ -28,7 +28,7 @@ use yii\jui\DatePicker;
             echo DatePicker::widget([
                 'model' => $model,
                 'attribute' => 'lpo_date',
-                // 'language' => 'ru',
+                //'language' => 'ru',
                 'dateFormat' => 'yyyy-MM-dd',
             ]);?>
         </div>
@@ -83,8 +83,8 @@ use yii\jui\DatePicker;
     </div>
 
 
-    <div class="row" >
-        <div class="col-md-6" >
+    <div class="row">
+        <div class="col-md-6">
             <?= $form->field($model, 'Requisioner')->textInput(['maxlength' => true]) ?>
         </div>
 
@@ -101,20 +101,19 @@ use yii\jui\DatePicker;
                 ->dropdownList(['1' => 'Tourism', '2' => 'AD','3' => 'Rhino', '4' => 'PAC','5' => 'Buildings', '6' => 'Fence','7' => 'Procurement', '8' => 'Accounts','9' => 'Human Capital', '10' => 'Roads','11' => 'Customer Care', '12' => 'Administration','13' => 'ICT', '14' => 'Telecom','15' => 'RPU', '16' => 'Intelligence','17' => 'Education', '18' => 'Research', '19' => 'Ngong', '20' => 'Machakos','21' => 'Makueni', '22' => 'Ngurumani','23' => 'Workshop', '24' => 'Eastgate','25' => 'Other'], ['prompt' => '---Select Data---']) ?>
         </div>
 
+        <div class="col-md-6" id="OtherDeparmentsId" style="display: none">
+            <?= $form->field($model, 'OtherDeparments')->textInput(['maxlength' => true]) ?>
+        </div>
 
-        <div class="col-md-6" >
+    </div>
+
+    <div class="row"> 
+    <div class="col-md-6" >
             <?= $form->field($model, 'Supplier')
                 ->dropdownList(['1' => 'Admiral trading co. ltd', '2' => 'Toyota Kenya Limited','3' => 'Merida Spares', '4' => ' Dapny Limited','5' => 'National Oil Corporation,', '6' => ' Duke energy products & Company','7' => ' Starbell Agencies', '8' => 'Tanar Suppliers','9' => 'Upper Land petrol station', '10' => 'Aquara Aqencies','11' => 'Sagoo Holdings', '12' => 'City engineering hydraulic','13' => ' Cherik enterprises', '14' => 'Wire products ltd','15' => 'Kenol Kobil', '16' => 'Kansai plascom','17' => 'Samco auto parts', '18' => 'Autostyle Performance Limited', '19' => 'Nairobi Crankshaft center', '20' => 'Ministry of transport','21' => 'Jaidah motors ltd', '22' => 'E. A drillicon ltd','23' => 'Chloride Oxide', '24' => 'Badgas autospares','25' => 'Andy Ventures','26' => 'Anitaan agencies','27' => 'Roots general suppliers','28' => ' Elwalk printers','29' => 'Other'], ['prompt' => '---Select Data---']) ?>
         </div>
 
 
-    </div>
-
-    <div class="row"> 
-
-    <div class="col-md-6" id="OtherDeparmentsId" style="display: none">
-            <?= $form->field($model, 'OtherDeparments')->textInput(['maxlength' => true]) ?>
-        </div>
 
         <div  class="col-md-6" id="OtherSuppliersId" style="display: none">
             <?= $form->field($model, 'OtherSuppliers')->textInput(['maxlength' => true]) ?>
@@ -181,21 +180,16 @@ use yii\jui\DatePicker;
     </div>
 
 
-    <div class="row" >
-        <div class="col-md-6" >
-            <?= $form->field($model, 'Status')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'Status')->textInput(['maxlength' => true])?>
         </div>
 
-        <div class="col-md-6" >
+        <div class="col-md-6">
             <?= $form->field($model, 'Quote')->textInput(['maxlength' => true]) ?>
         </div>
 
     </div>
-
-
-
-
-
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
@@ -214,7 +208,8 @@ use yii\jui\DatePicker;
             {
                 $('#OtherSuppliersId').show();
             }
-            else{
+            else
+            {
                 $('#OtherSuppliersId').hide();
 
             }
@@ -225,13 +220,15 @@ use yii\jui\DatePicker;
 
 
     $(document).ready(function(){
-        $('#companyproduct-department').on('change', function(e) {
+        $('#companyproduct-department').on('change', function(e) 
+        {
             var Department= $('#companyproduct-department').val();
             if(Department==25)
             {
                 $('#OtherDeparmentsId').show();
             }
-            else{
+            else
+            {
                 $('#OtherDeparmentsId').hide();
             }
         });
