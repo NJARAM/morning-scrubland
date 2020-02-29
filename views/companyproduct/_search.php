@@ -15,13 +15,17 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]);
      ?>
+<div class="row ">   
+<div class="col-md-10 ">   
 
+</div>
+<div class="col-md-2 ">   
+<?= $form->field($model, 'globalsearch')->textInput() ?>
+</div>
+</div>
 
-    <?= $form->field($model, 'globalsearch')->textInput() ?>
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
-    </div>
+   
+ 
 
     <?php ActiveForm::end(); ?>
 

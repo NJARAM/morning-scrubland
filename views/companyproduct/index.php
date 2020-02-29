@@ -19,9 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Add Item', ['create'], ['class' => 'btn btn-success']) ?>
-        <?php //echo $this->render('_search', ['model' => $searchModel]);?>
+        <?php echo $this->render('_search', ['model' => $searchModel]);?>
     </p>
-
+    
     <?php 
     $gridColumns = [
         ['class' => 'kartik\grid\SerialColumn'],
@@ -80,6 +80,7 @@ GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => $gridColumns,
     'pjax'=>true,
+ 
 ]);?>
 
 
