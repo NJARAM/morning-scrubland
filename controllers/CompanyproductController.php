@@ -47,23 +47,24 @@ class CompanyproductController extends SiteController
      */
     public function actionIndex()
     {
-        $searchModel = new CompanyproductSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // $searchModel = new CompanyproductSearch();
+        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        if (Yii::$app->request->isPjax) {
+        // if (Yii::$app->request->isPjax) {
 
-            return $this->renderPartial('index', [
+        //     return $this->renderPartial('index', [
 
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
+        //         'searchModel' => $searchModel,
+        //         'dataProvider' => $dataProvider,
 
-            ]);
-        }else{
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
-        }
+        //     ]);
+        // }else{
+        //     return $this->render('index', [
+        //         'searchModel' => $searchModel,
+        //         'dataProvider' => $dataProvider,
+        //     ]);
+        // }
+        return $this->render('index');
     }
 
     /**
@@ -84,18 +85,18 @@ class CompanyproductController extends SiteController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
-        $model = new Companyproduct();
+    // public function actionCreate()
+    // {
+    //     $model = new Companyproduct();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
-        }
+    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    //         return $this->redirect(['view', 'id' => $model->ID]);
+    //     }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
+    //     return $this->render('create', [
+    //         'model' => $model,
+    //     ]);
+    // }
 
     /**
      * Updates an existing Companyproduct model.
@@ -104,18 +105,18 @@ class CompanyproductController extends SiteController
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
+    // public function actionUpdate($id)
+    // {
+    //     $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
-        }
+    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
+    //         return $this->redirect(['view', 'id' => $model->ID]);
+    //     }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
+    //     return $this->render('update', [
+    //         'model' => $model,
+    //     ]);
+    // }
 
     /**
      * Deletes an existing Companyproduct model.

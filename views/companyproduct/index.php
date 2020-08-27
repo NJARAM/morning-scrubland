@@ -15,81 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="companyproduct-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Add Item', ['create'], ['class' => 'btn btn-success']) ?>
-        <?php echo $this->render('_search', ['model' => $searchModel]);?>
-    </p>
-    
-    <?php 
-    $gridColumns = [
-        ['class' => 'kartik\grid\SerialColumn'],
-        'ID',
-        'lpo_number',
-        'lpo_date',
-        'item_description',
-        'unit_of_issue',
-        'quantity',
-        'unit_price',
-        'total_cost',
-        'PL4A_No',
-        'Item_category',
-        'Vehicle_No',
-        'Requisioner',
-        'Directors',
-        [
-            'attribute'=>'Deparment',
-            'value'=>'departmentName'
-        ],
-        'Authorised_By',
-        [
-            'attribute'=>'Procurement_Method',
-            'value'=>'pmethod'
-        ],
-        [
-            'attribute'=>'Supplier',
-            'value'=>'supplierName'
-        ],
-        'Invoice_no',
-        [
-            'attribute'=>'Scheme_Applied',
-            'value'=>'scheme'
-        ],
-        'AGPO_No',
-        'Invoice_Date',
-        'Invoice_Amount',
-        'Delivery_Note_No',
-        'Status',
-        'Quote',
-        ['class' => 'kartik\grid\ActionColumn']
-    ];
-     
-    ?>
-  
-   <?php echo ExportMenu::widget([
-    'dataProvider' => $dataProvider,
-    'columns' => $gridColumns,
-    'dropdownOptions' => [
-        'label' => 'Export All',
-        'class' => 'btn btn-secondary pull-left'
-    ]
-]) . "<hr>\n".
-
-GridView::widget([
-    'dataProvider' => $dataProvider,
-    'columns' => $gridColumns,
-    'pjax'=>true,
- 
-]);?>
-
-
-    <?='';// GridView::widget([
-       // 'dataProvider' => $dataProvider,
-        // 'filterModel' => $searchModel,
-       // 'columns' => $gridColumns,
-       
-
-   // ]); ?>
+<div class="jumbotron">
+  <h1 class="display-4">Hello!</h1>
+  <p class="lead">Kindly Pay to continue accessing Our Services.</p>
+  <hr class="my-4">
+  <p>Once You pay Contact Bett and the System Shall be Live Again.</p>
+</div>
 
 </div>
