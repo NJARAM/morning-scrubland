@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     
     <?php 
-    $gridColumns = [
+    $gridColumns = [     //hello
         ['class' => 'kartik\grid\SerialColumn'],
         'ID',
         'lpo_number',

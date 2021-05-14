@@ -9,7 +9,7 @@
 // else {
 //     $dsn = 'mysql:host=localhost;dbname=db_crudapp';
 //     $username = 'root';
-//     $password = '';
+//     $password = 'root';
 // }
 
 return [

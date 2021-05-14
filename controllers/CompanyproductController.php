@@ -47,24 +47,24 @@ class CompanyproductController extends SiteController
      */
     public function actionIndex()
     {
-        // $searchModel = new CompanyproductSearch();
-        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel = new CompanyproductSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        // if (Yii::$app->request->isPjax) {
+        if (Yii::$app->request->isPjax) {
 
-        //     return $this->renderPartial('index', [
+            return $this->renderPartial('index', [
 
-        //         'searchModel' => $searchModel,
-        //         'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
 
-        //     ]);
-        // }else{
-        //     return $this->render('index', [
-        //         'searchModel' => $searchModel,
-        //         'dataProvider' => $dataProvider,
-        //     ]);
-        // }
-        return $this->render('index');
+            ]);
+        }else{
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
+      
     }
 
     /**
