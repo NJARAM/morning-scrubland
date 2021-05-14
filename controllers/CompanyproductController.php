@@ -18,6 +18,7 @@ class CompanyproductController extends SiteController
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
@@ -26,7 +27,7 @@ class CompanyproductController extends SiteController
                 'only' => ['index','create','update'],
                 'rules' => [
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index','create',],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
