@@ -23,7 +23,7 @@ class CompanyproductController extends SiteController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index'],
+                'only' => ['index','create','update'],
                 'rules' => [
                     [
                         'actions' => ['index'],
@@ -85,18 +85,20 @@ class CompanyproductController extends SiteController
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    // public function actionCreate()
-    // {
-    //     $model = new Companyproduct();
 
-    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
-    //         return $this->redirect(['view', 'id' => $model->ID]);
-    //     }
+    public function actionCreate()
+    {
+        $model = new Companyproduct();
 
-    //     return $this->render('create', [
-    //         'model' => $model,
-    //     ]);
-    // }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->ID]);
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
 
     /**
      * Updates an existing Companyproduct model.
@@ -105,18 +107,19 @@ class CompanyproductController extends SiteController
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    // public function actionUpdate($id)
-    // {
-    //     $model = $this->findModel($id);
 
-    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
-    //         return $this->redirect(['view', 'id' => $model->ID]);
-    //     }
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
 
-    //     return $this->render('update', [
-    //         'model' => $model,
-    //     ]);
-    // }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->ID]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
 
     /**
      * Deletes an existing Companyproduct model.
